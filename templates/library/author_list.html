@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Author List</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Biography</th>
+            <th>Birthdate</th>
+            <th>Action</th>
+        </tr>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.name }}</td>
+            <td>{{ author.biography }}</td>
+            <td>{{ author.birthdate }}</td>
+            <td><a href="{% url 'author_books' author.pk %}">View Books</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_author' %}">Add New Author</a
+</body>
+</html>

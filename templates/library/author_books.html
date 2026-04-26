@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+</head>
+<body>
+    <h1>Author Books</h1>
+    <p><strong>Author:</strong> {{ author.name }}</p>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Publication Date</th>
+            <th>Summary</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.publish_date }}</td>
+            <td>{{ book.summary }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

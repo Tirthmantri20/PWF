@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Job Listings</h1>
+
+    <form method="GET">
+        <select name="company">
+            <option value="">All Companies</option>
+            {% for company in companies %}
+            <option value="{{ company.id }}">{{ company.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <a href="{% url 'job_create' %}">Create Job</a>
+
+    {% for job in jobs %}
+    <h3><a href="{% url 'job_detail' job.pk %}">{{ job.title }}</a></h3>
+    <p>{{ job.company.name }} | {{ job.location }}</p>
+    {% endfor %}
+</body>
+
+</html>
