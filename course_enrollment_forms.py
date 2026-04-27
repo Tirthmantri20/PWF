@@ -1,6 +1,6 @@
 
 from django import forms
-from Q1.models import Student
+from .models import Student
 
 
 class StudentForm(forms.ModelForm):
