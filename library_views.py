@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book, Author
 from .forms import AuthorForm
 from rest_framework import generics
-from .serializers import AuthorSerializer
+from .serializers import BookSerializer
 
 
 # Create your views here.
@@ -33,8 +33,8 @@ def author_books(request, author_id):
 
 class BookListCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
-    serializer_class = AuthorSerializer
+    serializer_class = BookSerializer
 
 class BookRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Book.objects.all()
-    serializer_class = AuthorSerializer
+    serializer_class = BookSerializer

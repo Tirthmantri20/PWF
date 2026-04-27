@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
-from Q1.forms import StudentForm
-from Q1.models import Course, Student
+from .forms import StudentForm
+from .models import Course, Student
 
 # Create your views here.
 def add_Course(request):

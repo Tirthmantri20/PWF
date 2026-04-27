@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from Q1.views import add_Course, course_list, enroll_student, student_course
+from .views import add_Course, course_list, enroll_student, student_course
 
 urlpatterns = [
     path('admin/', admin.site.urls),
